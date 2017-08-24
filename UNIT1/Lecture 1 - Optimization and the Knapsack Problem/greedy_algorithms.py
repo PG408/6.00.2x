@@ -63,10 +63,8 @@ def testGreedy(items, constraint, keyFunction):
 def testGreedys(foods, maxUnits):
     print('Use greedy by value to allocate', maxUnits, 'calories')
     testGreedy(foods, maxUnits, Food.getValue)
-    
     print('\nUse greedy by cost to allocate', maxUnits, 'calories')
     testGreedy(foods, maxUnits, lambda x: 1/Food.getCost(x))
-    
     print('\nUse greedy by density to allocate', maxUnits, 'calories' )
     testGreedy(foods, maxUnits, Food.density)
     
