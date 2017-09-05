@@ -13,7 +13,7 @@ def powerSet(items):
         for j in range(N):
             # test bit jth of integer i
             if (i >> j) % 2 == 1:
-                combo.append(items[j])        
-        yield combo
-
+                combo.append(items[j])
+            yield combo
+            
 foo = powerSet([1, 2, 3])
