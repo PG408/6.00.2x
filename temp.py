@@ -1,19 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Aug 28 18:00:58 2017
+Created on Sat Sep  9 16:58:04 2017
 
 @author: Administrator
 """
 
-def powerSet(items):
-    N = len(items)
-    # enumerate the 2**N possible combinations
-    for i in range(2**N):
-        combo = []
-        for j in range(N):
-            # test bit jth of integer i
-            if (i >> j) % 2 == 1:
-                combo.append(items[j])        
-        yield combo
+import random
 
-foo = powerSet([1, 2, 3])
+def buildLargeMenu(numItems, maxVal, maxCost):
+    items = []
+    for i in range(numItems):
+        items.append(Food(str(i),
+                          random.randint(1, maxVal),
+                          random.randint(1,maxCost)))
+    return items
+
+for numItems in range(5,46,5):
+    items = buildLargeMenu(numItems, 90, 250)
+    testMaxVal
