@@ -7,12 +7,7 @@ Created on Fri Sep 15 21:02:31 2017
 
 def printPath(path):
     '''Assumes path is a list of nodes'''
-    result = ''
-    for i in range(len(path)):
-        result += str(path[i])
-        if i != len(path) - 1:
-            result += ' --> '
-    return result
+    return ' -> '.join(str(node) for node in path)
 
 def DFS(graph, start, end, path, shortest, toPrint = False):
     '''
@@ -77,5 +72,5 @@ def testSP(source, destination, searchType):
 
 
     
-testSP('Chicago', 'Boston', BFS)
-#testSP('Boston', 'Phoenix', BFS)
+#testSP('Chicago', 'Boston', BFS)
+testSP('Boston', 'Phoenix', BFS)
